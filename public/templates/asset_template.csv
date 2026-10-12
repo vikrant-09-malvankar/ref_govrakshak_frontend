@@ -1,0 +1,41 @@
+# Asset Import Template - Instructions and Column Descriptions
+# ================================================================
+# This template is designed to match the Add Assets form fields.
+# Please fill in the data below the header row and remove these comment lines before importing.
+#
+# IMPORTANT NOTES:
+# - Required fields are marked with * in the column descriptions below
+# - Leave cells empty for optional fields
+# - Date format should be YYYY-MM-DD (e.g., 2024-01-15)
+# - UIFID will be auto-generated automatically
+# - GEM Contract Number must match an existing approved order
+#
+# COLUMN DESCRIPTIONS:
+# ====================
+# GEM Contract Number*: Contract number from GEM portal (required) - Format: GEMC-511687759278412 or GEM/YYYY/B/XXXXXXX
+# Name*: Asset name/title (required) - Example: "Dell Laptop Inspiron 15"
+# Category*: Asset category (required) - Example: "Laptop", "Desktop", "Printer"
+# Serial Number*: Unique serial number (required) - Example: "DL123456789"
+# Department: Department assignment - Example: "IT Department", "Finance"
+# Location: Physical location - Example: "Building A, Floor 2, Room 201"
+# Model: Model number - Example: "Inspiron 15 3000"
+# Manufacturer: Manufacturer name - Example: "Dell", "HP", "Lenovo"
+# Brand: Brand name - Example: "Dell", "HP", "Apple"
+# Condition: Asset condition - Options: "New", "Used"
+# Description: Detailed description - Example: "15.6 inch laptop with Intel i5 processor"
+# Value*: Asset value in ₹ (required) - Example: "45000" (numbers only, no currency symbol)
+# Purchase Date*: Date of purchase (required) - Format: YYYY-MM-DD
+# Warranty Expiry: Warranty expiration date - Format: YYYY-MM-DD
+# Has AMC: AMC availability - Options: "Yes", "No"
+# AMC Expiry: AMC expiration date (if Has AMC = Yes) - Format: YYYY-MM-DD
+# AMC Supplier Name: AMC service provider name (if Has AMC = Yes) - Example: "Tech Support Pvt Ltd"
+# Status: Asset status - Options: "Active", "Under Repair", "Disposed"
+# Notes: Additional notes and comments - Example: "Previously used by John Doe"
+#
+# SAMPLE DATA ROW (remove this line before importing):
+# GEMC-511687759278412,Dell Laptop Inspiron 15,Laptop,DL123456789,IT Department,Building A Floor 2,Inspiron 15 3000,Dell,Dell,New,15.6 inch laptop with Intel i5,45000,2024-01-15,2026-01-15,Yes,2027-01-15,Tech Support Pvt Ltd,Active,Previously used by John Doe
+#
+# ================================================================
+# END OF INSTRUCTIONS - DATA STARTS BELOW
+# ================================================================
+GEM Contract Number,Name,Category,Serial Number,Department,Location,Model,Manufacturer,Brand,Condition,Description,Value,Purchase Date,Warranty Expiry,Has AMC,AMC Expiry,AMC Supplier Name,Status,Notes

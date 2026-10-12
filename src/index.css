@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base accessibility & font loading ──────────────────────────────────── */
+@layer base {
+  /* Focus visible — keyboard users get clear indicator, mouse users don't */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Default body styles */
+  body {
+    @apply bg-surface-muted text-gray-900 font-sans antialiased;
+    font-size: 0.9375rem; /* 15px body */
+  }
+
+  /* Dark mode body styles */
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  /* Remove default input appearance */
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  /* Scrollbar styling (webkit) */
+  ::-webkit-scrollbar        { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track  { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb  { @apply bg-gray-300 rounded-full hover:bg-gray-400; }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar-thumb { @apply bg-slate-600 hover:bg-slate-500; }
+
+  /* Selection colour */
+  ::selection { @apply bg-primary-100 text-primary-900; }
+
+  /* Dark mode selection */
+  .dark ::selection { @apply bg-slate-700 text-slate-100; }
+}
+
+/* ─── Component layer — reusable patterns ───────────────────────────────── */
+@layer components {
+  /* Skip to content link (accessibility) */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]
+           focus:bg-primary-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-btn focus:shadow-modal;
+  }
+
+  /* Form field label */
+  .field-label {
+    @apply block text-small font-medium text-gray-700 mb-1.5;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-surface-border my-4;
+  }
+
+  /* Page content container */
+  .page-container {
+    @apply max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+  }
+
+  /* Dark mode select and option styling */
+  .dark select {
+    @apply bg-slate-700 text-white border-slate-600;
+  }
+
+  .dark select option {
+    @apply bg-slate-700 text-white;
+  }
+
+  .dark textarea {
+    @apply bg-slate-700 text-white border-slate-600 placeholder-gray-400;
+  }
+
+  .dark .seller-registration-form .bg-gray-50 {
+    @apply bg-slate-800/70;
+  }
+
+  .dark .seller-registration-form .bg-white {
+    @apply bg-slate-900;
+  }
+
+  .dark .seller-registration-form input,
+  .dark .seller-registration-form select {
+    @apply border-slate-600 bg-slate-800 text-slate-100 placeholder:text-slate-400;
+  }
+
+  .dark .seller-registration-form label,
+  .dark .seller-registration-form h2,
+  .dark .seller-registration-form h3,
+  .dark .seller-registration-form h4 {
+    @apply text-slate-100;
+  }
+
+  .dark .seller-registration-form .border-gray-200,
+  .dark .seller-registration-form .border-gray-300 {
+    @apply border-slate-600;
+  }
+
+  .dark .seller-registration-form .text-gray-500,
+  .dark .seller-registration-form .text-gray-600,
+  .dark .seller-registration-form .text-gray-700 {
+    @apply text-slate-300;
+  }
+
+  .dark .end-user-registration-form .bg-gray-50 {
+    @apply bg-slate-800/70;
+  }
+
+  .dark .end-user-registration-form .bg-white {
+    @apply bg-slate-900;
+  }
+
+  .dark .end-user-registration-form input,
+  .dark .end-user-registration-form select,
+  .dark .end-user-registration-form textarea {
+    @apply border-slate-600 bg-slate-800 text-slate-100 placeholder:text-slate-400;
+  }
+
+  .dark .end-user-registration-form label,
+  .dark .end-user-registration-form h2,
+  .dark .end-user-registration-form h3,
+  .dark .end-user-registration-form h4 {
+    @apply text-slate-100;
+  }
+
+  .dark .end-user-registration-form .border-gray-200,
+  .dark .end-user-registration-form .border-gray-300 {
+    @apply border-slate-600;
+  }
+
+  .dark .end-user-registration-form .text-gray-500,
+  .dark .end-user-registration-form .text-gray-600,
+  .dark .end-user-registration-form .text-gray-700 {
+    @apply text-slate-300;
+  }
+
+  /* Registration form surfaces follow the root theme toggle. */
+  .dark .buyer-registration-form {
+    @apply border-slate-700 bg-slate-900;
+  }
+
+  .dark .buyer-registration-form form > div.bg-gray-50 {
+    @apply bg-slate-800;
+  }
+
+  .dark .buyer-registration-form form > div.bg-gray-50 h2,
+  .dark .buyer-registration-form form > div.bg-gray-50 label {
+    @apply text-slate-100;
+  }
+
+  .dark .buyer-registration-form input,
+  .dark .buyer-registration-form select,
+  .dark .buyer-registration-form textarea {
+    @apply border-slate-600 bg-slate-900 text-slate-100 placeholder:text-slate-400;
+  }
+
+  .dark .buyer-registration-form input:focus,
+  .dark .buyer-registration-form select:focus,
+  .dark .buyer-registration-form textarea:focus {
+    @apply border-primary-500 bg-slate-800;
+  }
+}
+
+/* ─── Utility layer ──────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Hide scrollbar but keep scrollability */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+  /* Text balance for headings */
+  .text-balance { text-wrap: balance; }
+
+  /* Truncate to N lines */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
